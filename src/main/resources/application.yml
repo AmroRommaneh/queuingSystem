@@ -1,0 +1,17 @@
+twilio:
+  account_sid: AC91d7189514c87659725d6ace5ad7f131
+  auth_token: 90f21b4b724bfb51469270fac3ea3af6
+  trial_number: +19295316696
+
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          facebook:
+            clientId: 221615726737548
+            clientSecret: 5aa71924314edb0eaf9911f4cbd6c04d
+            scope:
+              - email
+              - public_profile

@@ -1,10 +1,11 @@
 package com.amr.gradutionPro.gradutionPro.Model;
 
+import com.amr.gradutionPro.gradutionPro.Provider;
 import com.amr.gradutionPro.gradutionPro.Role;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
+import javax.validation.constraints.Email;
 import javax.persistence.*;
 
 @Entity @Setter @Getter @NoArgsConstructor
@@ -17,6 +18,7 @@ public class User {
     private long id;
     @Column(name = "UserName")
     private String name;
+    @Email
     @Column(name = "email")
     private String email;
     @Column(name = "phoneNumber")
@@ -25,6 +27,9 @@ public class User {
     private String password;
     @Column(name = "Role")
     private Role role;
+    @Enumerated(EnumType.STRING)
+    private Provider provider;
+
 
     public User( String name, String email, int phoneNumber, String password,Role role) {
         this.name = name;
@@ -32,6 +37,13 @@ public class User {
         this.phoneNumber = phoneNumber;
         this.password = password;
         this.role=role;
+    }
+    public Provider getProvider() {
+        return provider;
+    }
+
+    public void setProvider(Provider provider) {
+        this.provider = provider;
     }
 
     public void setPassword(String password) {

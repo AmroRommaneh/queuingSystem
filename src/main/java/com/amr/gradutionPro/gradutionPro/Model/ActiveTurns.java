@@ -4,7 +4,6 @@ package com.amr.gradutionPro.gradutionPro.Model;
 import com.amr.gradutionPro.gradutionPro.Service;
 import com.amr.gradutionPro.gradutionPro.Status;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -12,38 +11,38 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 
 @Entity
-@Table(name = "Turn")
+@Table(name = "ActiveTurn")
 @Setter
 @Getter
-public class Turn {
+public class ActiveTurns {
     @Id
     @GeneratedValue
-    @Column(name = "TurnId")
+    @Column(name = "ActiveTurnId")
     private long id;
-    @Column(name = "clientId")
+    @Column(name = "ActiveTurnclientId")
 
     private long clientId;
-    @Column(name = "service")
+    @Column(name = "ActiveTurnservice")
     private Service service;
 
-    @Column(name = "estimatedTimeToStart")
+    @Column(name = "ActiveTurnestimatedTimeToStart")
 
     private int estimatedTimeToStart;
 
-    @Column(name = "timeWhenPicked")
+    @Column(name = "ActiveTurntimeWhenPicked")
     private LocalTime time;
 
-    @Column(name = "Date")
+    @Column(name = "ActiveTurnDate")
     private LocalDate date;
-    @Column(name = "windowSelected")
+    @Column(name = "ActiveTurnwindowSelected")
 
     private int windowSelected;
-    @Column(name ="estimatedTime" )
+    @Column(name ="ActiveTurnestimatedTime" )
     private int estimatedTime;
     @Column(name = "Status")
     private Status status;
 
-    public Turn(long clientId, Service service, int estimatedTimeToStart, LocalTime time, LocalDate date, int windowSelected, int estimatedTime ,Status status) {
+    public ActiveTurns(long clientId, Service service, int estimatedTimeToStart, LocalTime time, LocalDate date, int windowSelected, int estimatedTime,Status status) {
         this.clientId = clientId;
         this.service = service;
         this.estimatedTimeToStart = estimatedTimeToStart;
@@ -52,9 +51,10 @@ public class Turn {
         this.windowSelected = windowSelected;
         this.estimatedTime = estimatedTime;
         this.status=status;
+
     }
 
-    public Turn() {
+    public ActiveTurns() {
     }
 
     public long getClientId() {

@@ -1,10 +1,11 @@
 package com.amr.gradutionPro.gradutionPro.Repositry;
 
-import com.amr.gradutionPro.gradutionPro.Model.Client;
 import com.amr.gradutionPro.gradutionPro.Model.User;
-import org.hibernate.metamodel.model.convert.spi.JpaAttributeConverter;
+import com.amr.gradutionPro.gradutionPro.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+
+import java.util.ArrayList;
 
 @Repository
 public interface UserRep extends JpaRepository<User, Long> {
@@ -18,4 +19,5 @@ public interface UserRep extends JpaRepository<User, Long> {
 
      User findById(long id) ;
 
+    ArrayList<User> findByRole(Role role);
 }
